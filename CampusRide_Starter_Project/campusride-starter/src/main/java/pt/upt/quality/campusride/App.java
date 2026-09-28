@@ -17,6 +17,7 @@ public class App {
     private static void runTeamFeatures(Fleet fleet,
                                         RentalService rentalService,
                                         FleetReport report) {
+        System.out.println("S10 / 40 min = " + rentalService.calculateRentalPrice("S10", 40) + " EUR");
         EBike eBike = new EBike("E20", 95);
         eBike.charge(20);
         System.out.println("E20 battery = " + eBike.getBatteryLevel());
