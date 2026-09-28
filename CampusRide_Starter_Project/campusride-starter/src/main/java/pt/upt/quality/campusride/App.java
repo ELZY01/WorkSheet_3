@@ -20,5 +20,13 @@ public class App {
         EBike eBike = new EBike("E20", 95);
         eBike.charge(20);
         System.out.println("E20 battery = " + eBike.getBatteryLevel());
+
+        rentalService.rentVehicle("B1");
+
+        System.out.println("B1 available after rent = "
+                + fleet.findById("B1").isAvailable());
+
+        rentalService.returnVehicle("B1");
+
     }
 }
