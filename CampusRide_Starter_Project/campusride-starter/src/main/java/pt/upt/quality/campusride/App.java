@@ -17,8 +17,17 @@ public class App {
     private static void runTeamFeatures(Fleet fleet,
                                         RentalService rentalService,
                                         FleetReport report) {
+        System.out.println("S10 / 40 min = " + rentalService.calculateRentalPrice("S10", 40) + " EUR");
+        EBike eBike = new EBike("E20", 95);
+        eBike.charge(20);
+        System.out.println("E20 battery = " + eBike.getBatteryLevel());
 
-        System.out.println("Available: " + report.availableVehicleIds());
-        System.out.println("Total 15 min: " + report.estimateTotalPrice(15));
+        rentalService.rentVehicle("B1");
+
+        System.out.println("B1 available after rent = "
+                + fleet.findById("B1").isAvailable());
+
+        rentalService.returnVehicle("B1");
+
     }
 }
